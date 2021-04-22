@@ -179,6 +179,17 @@ tmp/examples/Example1.$(ObjSuf): \
 	external/ExRootAnalysis/ExRootTreeReader.h \
 	external/ExRootAnalysis/ExRootTreeWriter.h \
 	external/ExRootAnalysis/ExRootUtilities.h
+DelphesValidation$(ExeSuf): \
+	tmp/validation/DelphesValidation.$(ObjSuf)
+
+tmp/validation/DelphesValidation.$(ObjSuf): \
+	validation/DelphesValidation.cpp \
+	classes/DelphesClasses.h \
+	external/ExRootAnalysis/ExRootResult.h \
+	external/ExRootAnalysis/ExRootTreeBranch.h \
+	external/ExRootAnalysis/ExRootTreeReader.h \
+	external/ExRootAnalysis/ExRootTreeWriter.h \
+	external/ExRootAnalysis/ExRootUtilities.h
 EXECUTABLE +=  \
 	hepmc2pileup$(ExeSuf) \
 	lhco2root$(ExeSuf) \
@@ -187,7 +198,8 @@ EXECUTABLE +=  \
 	root2pileup$(ExeSuf) \
 	stdhep2pileup$(ExeSuf) \
 	CaloGrid$(ExeSuf) \
-	Example1$(ExeSuf)
+	Example1$(ExeSuf) \
+	DelphesValidation$(ExeSuf)
 
 EXECUTABLE_OBJ +=  \
 	tmp/converters/hepmc2pileup.$(ObjSuf) \
@@ -197,7 +209,8 @@ EXECUTABLE_OBJ +=  \
 	tmp/converters/root2pileup.$(ObjSuf) \
 	tmp/converters/stdhep2pileup.$(ObjSuf) \
 	tmp/examples/CaloGrid.$(ObjSuf) \
-	tmp/examples/Example1.$(ObjSuf)
+	tmp/examples/Example1.$(ObjSuf) \
+	tmp/validation/DelphesValidation.$(ObjSuf)
 
 DelphesHepMC$(ExeSuf): \
 	tmp/readers/DelphesHepMC.$(ObjSuf)
@@ -634,6 +647,8 @@ tmp/external/Hector/H_VerticalKicker.$(ObjSuf): \
 	external/Hector/H_VerticalKicker.$(SrcSuf)
 tmp/external/Hector/H_VerticalQuadrupole.$(ObjSuf): \
 	external/Hector/H_VerticalQuadrupole.$(SrcSuf)
+tmp/external/TrackCovariance/AcceptanceClx.$(ObjSuf): \
+	external/TrackCovariance/AcceptanceClx.$(SrcSuf)
 tmp/external/TrackCovariance/ObsTrk.$(ObjSuf): \
 	external/TrackCovariance/ObsTrk.$(SrcSuf)
 tmp/external/TrackCovariance/SolGeom.$(ObjSuf): \
@@ -642,6 +657,10 @@ tmp/external/TrackCovariance/SolGridCov.$(ObjSuf): \
 	external/TrackCovariance/SolGridCov.$(SrcSuf)
 tmp/external/TrackCovariance/SolTrack.$(ObjSuf): \
 	external/TrackCovariance/SolTrack.$(SrcSuf)
+tmp/external/TrackCovariance/TrkUtil.$(ObjSuf): \
+	external/TrackCovariance/TrkUtil.$(SrcSuf)
+tmp/external/TrackCovariance/VertexFit.$(ObjSuf): \
+	external/TrackCovariance/VertexFit.$(SrcSuf)
 tmp/modules/AngularSmearing.$(ObjSuf): \
 	modules/AngularSmearing.$(SrcSuf) \
 	modules/AngularSmearing.h \
@@ -1144,10 +1163,13 @@ DELPHES_OBJ +=  \
 	tmp/external/Hector/H_TransportMatrices.$(ObjSuf) \
 	tmp/external/Hector/H_VerticalKicker.$(ObjSuf) \
 	tmp/external/Hector/H_VerticalQuadrupole.$(ObjSuf) \
+	tmp/external/TrackCovariance/AcceptanceClx.$(ObjSuf) \
 	tmp/external/TrackCovariance/ObsTrk.$(ObjSuf) \
 	tmp/external/TrackCovariance/SolGeom.$(ObjSuf) \
 	tmp/external/TrackCovariance/SolGridCov.$(ObjSuf) \
 	tmp/external/TrackCovariance/SolTrack.$(ObjSuf) \
+	tmp/external/TrackCovariance/TrkUtil.$(ObjSuf) \
+	tmp/external/TrackCovariance/VertexFit.$(ObjSuf) \
 	tmp/modules/AngularSmearing.$(ObjSuf) \
 	tmp/modules/BTagging.$(ObjSuf) \
 	tmp/modules/BeamSpotFilter.$(ObjSuf) \
